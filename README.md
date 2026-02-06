@@ -27,7 +27,13 @@ HotspotKeeper solves this problem automatically.
 
 ---
 
-## 🖥️ Requirements
+## � Screenshot
+
+![HotspotKeeper Screenshot](assets/hotspotkeeper.png)
+
+---
+
+## �🖥️ Requirements
 
 - Windows 10 / Windows 11
 - Administrator permission (for hotspot control)
@@ -39,7 +45,7 @@ HotspotKeeper solves this problem automatically.
 ### Option 1 — Installer (Recommended)
 
 1. Download latest release from:
-   👉 https://github.com/YOUR_USERNAME/HotspotKeeper/releases
+   👉 https://github.com/Moanesbbr/HotspotKeeper/releases
 
 2. Run installer
 3. Launch application

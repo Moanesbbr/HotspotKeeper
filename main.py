@@ -249,10 +249,10 @@ class MainWindow(QMainWindow):
     def init_ui(self):
         """Initialize the user interface"""
         self.setWindowTitle("HotspotKeeper")
-        self.setFixedSize(400, 300)
+        self.setFixedSize(450, 320)
         
         # Set window icon if logo.ico exists
-        icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logo.ico')
+        icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets/logo.ico')
         if os.path.exists(icon_path):
             self.setWindowIcon(QIcon(icon_path))
         
@@ -267,6 +267,11 @@ class MainWindow(QMainWindow):
         title = QLabel("HotspotKeeper")
         title.setStyleSheet("font-size: 18px; font-weight: bold; color: #e8e8e8;")
         layout.addWidget(title)
+        
+        # Slogan
+        slogan = QLabel("Never Forget Hotspot Again.")
+        slogan.setStyleSheet("font-size: 12px; font-style: italic; color: #a8a8a8;")
+        layout.addWidget(slogan)
         
         # Status frame
         status_frame = QFrame()
@@ -340,16 +345,19 @@ class MainWindow(QMainWindow):
         
         # Manual controls
         controls_layout = QHBoxLayout()
+        controls_layout.setSpacing(10)
         
         self.enable_btn = QPushButton("Enable Hotspot")
+        self.enable_btn.setMinimumWidth(180)
+        self.enable_btn.setFixedHeight(40)
         self.enable_btn.setStyleSheet("""
             QPushButton {
                 background-color: #8b7355;
                 color: #f5f5dc;
                 border: 2px solid #6b5344;
                 border-radius: 5px;
-                padding: 10px;
-                font-size: 12px;
+                padding: 8px 20px;
+                font-size: 13px;
                 font-weight: bold;
             }
             QPushButton:hover {
@@ -369,14 +377,16 @@ class MainWindow(QMainWindow):
         controls_layout.addWidget(self.enable_btn)
         
         self.disable_btn = QPushButton("Disable Hotspot")
+        self.disable_btn.setMinimumWidth(180)
+        self.disable_btn.setFixedHeight(40)
         self.disable_btn.setStyleSheet("""
             QPushButton {
                 background-color: #8b6f47;
                 color: #f5f5dc;
                 border: 2px solid #6b5337;
                 border-radius: 5px;
-                padding: 10px;
-                font-size: 12px;
+                padding: 8px 20px;
+                font-size: 13px;
                 font-weight: bold;
             }
             QPushButton:hover {
@@ -397,13 +407,18 @@ class MainWindow(QMainWindow):
         
         layout.addLayout(controls_layout)
         
-        layout.addStretch()
-        
         # Info label
         info = QLabel("The app will automatically enable hotspot when WiFi connects.")
         info.setWordWrap(True)
         info.setStyleSheet("font-size: 11px; color: #888888;")
         layout.addWidget(info)
+        
+        # GitHub link
+        github_link = QLabel('<a href="https://github.com/Moanesbbr/HotspotKeeper" style="color: #8b7355;">Open Source on GitHub</a>')
+        github_link.setOpenExternalLinks(True)
+        github_link.setStyleSheet("font-size: 11px;")
+        github_link.setAlignment(Qt.AlignCenter)
+        layout.addWidget(github_link)
         
         # Apply night mode styling
         self.setStyleSheet("""
@@ -434,7 +449,7 @@ class MainWindow(QMainWindow):
     def create_tray_icon(self):
         """Create system tray icon and menu"""
         # Try to load logo.ico if it exists
-        icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logo.ico')
+        icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets/logo.ico')
         
         if os.path.exists(icon_path):
             icon = QIcon(icon_path)
@@ -679,7 +694,7 @@ def main():
     app.setQuitOnLastWindowClosed(False)  # Keep running in tray
     
     # Set application icon if logo.ico exists
-    icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logo.ico')
+    icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets/logo.ico')
     if os.path.exists(icon_path):
         app.setWindowIcon(QIcon(icon_path))
     
