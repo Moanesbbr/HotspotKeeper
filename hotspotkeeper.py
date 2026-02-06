@@ -251,8 +251,8 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("HotspotKeeper")
         self.setFixedSize(450, 320)
         
-        # Set window icon if logo.ico exists
-        icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets/logo.ico')
+        # Set window icon if icon.ico exists
+        icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'icon.ico')
         if os.path.exists(icon_path):
             self.setWindowIcon(QIcon(icon_path))
         
@@ -448,8 +448,8 @@ class MainWindow(QMainWindow):
     
     def create_tray_icon(self):
         """Create system tray icon and menu"""
-        # Try to load logo.ico if it exists
-        icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets/logo.ico')
+        # Try to load icon.ico if it exists
+        icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'icon.ico')
         
         if os.path.exists(icon_path):
             icon = QIcon(icon_path)
@@ -693,8 +693,8 @@ def main():
     app = QApplication(sys.argv)
     app.setQuitOnLastWindowClosed(False)  # Keep running in tray
     
-    # Set application icon if logo.ico exists
-    icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets/logo.ico')
+    # Set application icon if icon.ico exists
+    icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'assets', 'icon.ico')
     if os.path.exists(icon_path):
         app.setWindowIcon(QIcon(icon_path))
     

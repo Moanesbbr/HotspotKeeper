@@ -3,7 +3,6 @@
 # PyInstaller
 build/
 dist/
-*.spec
 pyi-*
 
 # Python cache
