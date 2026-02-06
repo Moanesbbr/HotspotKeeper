@@ -1,0 +1,44 @@
+# Git ignore for PyInstaller builds and common temporary files
+
+# PyInstaller
+build/
+dist/
+*.spec
+pyi-*
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Distribution
+*.egg-info/
+pip-wheel-metadata/
+
+# PyInstaller artifacts
+*.exe
+*.manifest
+*.dll
+*.pyd
+
+# Icons and resources
+*.ico
