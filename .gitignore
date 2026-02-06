@@ -39,5 +39,3 @@ pip-wheel-metadata/
 *.dll
 *.pyd
 
-# Icons and resources
-*.ico
